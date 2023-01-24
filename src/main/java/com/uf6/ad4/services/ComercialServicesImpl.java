@@ -44,8 +44,40 @@ public class ComercialServicesImpl implements ComercialServices {
     }
 
     @Override
-    public boolean borrarUno(int idComercial) {
-        return false;
+    public boolean borrarUno( int idComercial ) {
+
+        try {
+            this.comercial.deleteById( idComercial );
+            return true;
+        } catch ( Exception e ) {
+            e.printStackTrace();
+            return false;
+        }
+
+    }
+
+    @Override
+    public List<ComercialEntity> comercialQueVendeACliente(int idCliente) {
+
+        try {
+            return this.comercial.comercialQueVendeACliente(idCliente);
+        } catch ( Exception e ) {
+            e.printStackTrace();
+            return null;
+        }
+
+    }
+
+    @Override
+    public List<ComercialEntity> comercialesConPedidos() {
+
+        try {
+            return this.comercial.comercialesConPedidos();
+        } catch ( Exception e ) {
+            e.printStackTrace();
+            return null;
+        }
+
     }
 
 

@@ -6,7 +6,12 @@ import java.util.List;
 
 public interface ComercialRepository extends JpaRepository<ComercialEntity, Integer> {
 
-    @Query("select c from ComercialEntity c")
-    public List<ComercialEntity> findAll();
+    @Query( value = "select * from comerciales where id_comercial in" +
+            "(select id_comercial from pedidos where id_cliente = ?)", nativeQuery = true )
+    List<ComercialEntity> comercialQueVendeACliente(int idCliente);
+
+    @Query( value = "select * from comerciales where id_comercial in ( select id_comercial from pedidos )" +
+            "order by id_comercial", nativeQuery = true )
+    List<ComercialEntity> comercialesConPedidos();
 
 }

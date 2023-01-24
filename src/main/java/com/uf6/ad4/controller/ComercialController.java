@@ -1,7 +1,9 @@
 package com.uf6.ad4.controller;
 
 import com.uf6.ad4.model.entity.ComercialEntity;
+import com.uf6.ad4.model.entity.PedidoEntity;
 import com.uf6.ad4.services.ComercialServices;
+import com.uf6.ad4.services.PedidoServices;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -18,6 +20,9 @@ public class ComercialController {
 
     @Autowired
     private ComercialServices comercial;
+
+    @Autowired
+    private PedidoServices pedido;
 
 
     //Métodos
@@ -65,6 +70,36 @@ public class ComercialController {
         return comercial.findById(idComercial);
     }
 
+    @DeleteMapping("/borrarUno/{id}")
+    public String borraUno( @PathVariable( "id" ) int idComercial ) {
 
+        if ( this.comercial.borrarUno( idComercial ) ) {
+            return "Comercial eliminado con éxito.";
+        } else {
+            return "No se ha podido eliminar el comercial.";
+        }
+
+    }
+
+    @GetMapping( "/porCliente/{id}" )
+    public List<ComercialEntity> porComercial( @PathVariable( "id" ) int idCliente ) {
+
+        return this.comercial.comercialQueVendeACliente( idCliente );
+
+    }
+
+    @GetMapping( "/conPedidos" )
+    public List<ComercialEntity> conPedidos() {
+
+        return this.comercial.comercialesConPedidos();
+
+    }
+
+    @GetMapping( "/pedidos/{id}" )
+    public List<PedidoEntity> pedidos( @PathVariable( "id" ) int idComercial ) {
+
+        return this.pedido.pedidosDeComercial( idComercial );
+
+    }
 
 }

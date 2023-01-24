@@ -9,5 +9,7 @@ public interface ComercialServices {
     boolean crearUno(ComercialEntity comercial);
     List<ComercialEntity> findAll();
     boolean borrarUno(int idComercial);
+    List<ComercialEntity> comercialQueVendeACliente(int idCliente);
+    List<ComercialEntity> comercialesConPedidos();
 
 }
