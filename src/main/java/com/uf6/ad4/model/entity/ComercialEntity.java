@@ -1,14 +1,23 @@
 package com.uf6.ad4.model.entity;
 import javax.persistence.*;
 import java.io.Serializable;
-import java.util.List;
 import java.util.Objects;
 
+
+/**
+ * Clase encargada de representar la entidad Comercial.
+ *
+ * @author Raúl Herrera
+ * @author Pavlo Dudnyk
+ * @version 1.0
+ */
 @Entity
-@Table( name = "comerciales" )
+@Table(name = "comerciales")
 public class ComercialEntity implements Serializable {
 
+
     //Atributos
+
 
     private static final long serialVersionUID = 1L;
 
@@ -36,6 +45,7 @@ public class ComercialEntity implements Serializable {
 
     //Constructores
 
+
     public ComercialEntity() {
     }
 
@@ -47,7 +57,9 @@ public class ComercialEntity implements Serializable {
         this.comision = comision;
     }
 
+
     //Getters y Setters
+
 
     public int getIdComercial() {
         return idComercial;

@@ -4,8 +4,16 @@ import java.io.Serializable;
 import java.util.Date;
 import java.util.Objects;
 
+
+/**
+ * Clase encargada de representar la entidad Pedido en la base de datos.
+ *
+ * @author Raúl Herrera
+ * @author Pavlo Dudnyk
+ * @version 1.0
+ */
 @Entity
-@Table( name = "pedidos" )
+@Table(name = "pedidos")
 public class PedidoEntity implements Serializable {
 
 
@@ -125,5 +133,6 @@ public class PedidoEntity implements Serializable {
                 ", comercialesByIdComercial=" + comercialEntity +
                 '}';
     }
+
 
 }

@@ -1,5 +1,4 @@
 package com.uf6.ad4.controller;
-
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -31,15 +30,22 @@ public class HomeController {
                 
                 /comercial/verUno/{id}
                 Te permite ver un comercial por su id.
+                Devolverá el comercial o null si no existe.
                 
                 /comercial/porCliente/{id}
                 Te permite ver los comerciales que han vendido a un cliente por si id.
+                Devolverá una lista de los comerciales que han vendido a ese cliente,
+                (la lista podría estar vacía).
                 
                 /comercial/conPedidos
                 Te permite ver los comerciales que han hecho pedidos.
+                Devolverá una lista de los comerciales que han hecho pedidos,
+                (la lista podría estar vacía).
                 
                 /comercial/pedidos/{id}
                 Te permite ver los pedidos de un comercial por su id.
+                Devolverá una lista de los pedidos del comercial,
+                (la lista podría estar vacía).
                 
                 Realizado por Raúl Herrera & Pavlo Dudnyk.
                 """);

@@ -1,12 +1,19 @@
 package com.uf6.ad4.model.entity;
 import javax.persistence.*;
 import java.io.Serializable;
-import java.util.List;
 import java.util.Objects;
 
+/**
+ * Clase encargada de representar la entidad Cliente.
+ *
+ * @author Raúl Herrera
+ * @author Pavlo Dudnyk
+ * @version 1.0
+ */
 @Entity
-@Table( name = "clientes" )
+@Table(name = "clientes")
 public class ClienteEntity implements Serializable {
+
 
     // Atributos
 
